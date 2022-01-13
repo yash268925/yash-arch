@@ -3,4 +3,4 @@
 base container for development
 
 - Base image: archlinux:base-devel
-- Default User: yash(/home/yash)
+- Default User: user(/home/user)
