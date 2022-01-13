@@ -16,12 +16,9 @@ COPY zshrc/zshrc.local /etc/skel/.zshrc.local
 COPY neovim-init /etc/skel/.config/nvim/
 COPY dircolors /etc/skel/.dircolors
 
-RUN cd /etc/skel/.config/nvim \
- && mkdir autoload \
- && cd autoload \
- && curl -sLO https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
 RUN useradd -m -G wheel -U -s /usr/sbin/zsh user
+
+RUN pacman -S --noconfirm skk-jisyo
 
 USER user
 WORKDIR /home/user
